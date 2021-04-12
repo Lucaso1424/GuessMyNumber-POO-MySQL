@@ -1,9 +1,4 @@
 <?php
-/**
- * Implementació de la clase DatabaseConnection segons el model Procedimental.
- *
- * @author Pep
- */
 class DatabaseProc {
     private $servername = "localhost";
     private $username = "root";

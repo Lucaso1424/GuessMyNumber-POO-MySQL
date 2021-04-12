@@ -1,10 +1,4 @@
 <?php
-/**
- * Implementació de la clase DatabaseConnection segons el model OOP,
- * Object Oriented Programming.
- *
- * @author Pep
- */
 class DatabaseOOP {
     private $servername = "localhost";
     private $username = "root";
