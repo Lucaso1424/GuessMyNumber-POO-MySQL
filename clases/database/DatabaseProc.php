@@ -8,10 +8,9 @@ class DatabaseProc {
     public function connect(): void {
         $this->connection = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
         if (!$this->connection) {
-            die("<h2>Connection failed: " . mysqli_connect_error(). "</h4>");
+            die("<h2>Connection failed: " . mysqli_connect_error() . "</h4>");
             $this->connection = null;
-        }
-        if ($this->connection) {
+        } else if ($this->connection) {
             echo "<h2>Connection on database succesfully</h2>";
         }
     }

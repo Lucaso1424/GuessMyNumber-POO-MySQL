@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'clases/database/DatabaseOOP.php';
+include_once 'clases/database/DatabaseProc.php';
 include_once 'clases/AdivinaJugador.php';
 error_reporting(0);
 ?>
@@ -17,7 +17,7 @@ error_reporting(0);
         <h1>Guess my number</h1>
         <h2>Nivell 1</h2>
         <?php
-        $dbproc = new DatabaseOOP();
+        $dbproc = new DatabaseProc();
         $dbproc->connect();
         ?>
         <form method="post" action="index.php">

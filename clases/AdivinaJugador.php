@@ -1,4 +1,5 @@
 <?php
+
 if (!isset($_SESSION["sesion_jugador"])) {
     $_SESSION["sesion_jugador"] = "";
 }
@@ -18,7 +19,7 @@ class AdivinaJugador {
         if (!isset($this->intentos_jugador)) {
             $this->intentos_jugador = $_SESSION["intentos"] = 0;
         }
-        
+
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 10);
         }
@@ -42,6 +43,10 @@ class AdivinaJugador {
                     echo $this->estadisticas;
                     $this->contador_jugador ++;
                     $this->intentos_jugador ++;
+                    
+                    $dbproc = new DatabaseProc();
+//                    $dbproc->insert(NULL, "JUGADOR", 1, NULL, NULL);
+                    $dbproc->selectAll();
                     echo "<input type='submit' value='Jugar de nuevo'>";
                 } else if ($numero > $secretNumber) {
                     echo "<h3>El número ha de ser más pequeño que $numero" . "</h3>";
@@ -62,7 +67,7 @@ class AdivinaJugador {
         if (!isset($this->intentos_jugador)) {
             $this->intentos_jugador = $_SESSION["intentos"] = 0;
         }
-        
+
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 50);
         }
@@ -106,7 +111,7 @@ class AdivinaJugador {
         if (!isset($this->intentos_jugador)) {
             $this->intentos_jugador = $_SESSION["intentos"] = 0;
         }
-        
+
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 100);
         }
