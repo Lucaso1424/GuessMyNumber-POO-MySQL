@@ -1,0 +1,78 @@
+@font-face {
+    font-family: fuente;
+    src: url(Goldman-Bold.ttf);
+}
+
+body {
+    background-color: #33ff8d;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 3px #999;
+    font-family: "fuente";
+}
+
+h2 {
+    text-align: center;
+    text-shadow: 2px 3px #999;
+    font-family: "fuente";
+}
+
+p {
+    font-size: 15;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+h3 {
+    text-align: left;
+    text-shadow: 2px 3px #999;
+    font-family: "fuente";
+}
+
+h4 {
+    text-align: center;
+    font-family: "fuente";
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #33a2ff;
+    color: black;
+    text-align: center;
+}
+
+#logo {
+    position: relative;
+    left: 650px;
+    bottom: 250px;
+    width: 30%;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
