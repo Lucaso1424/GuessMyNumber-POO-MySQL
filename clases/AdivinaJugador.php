@@ -10,8 +10,10 @@ class AdivinaJugador {
     private $intentos_jugador;
     private $numeroSecreto;
     private $estadisticas;
+    private $modalidad;
 
     public function pregunta_jugador1() {
+        $dbproc = new DatabaseProc();
         if (!isset($this->contador_jugador)) {
             $this->contador_jugador = $_SESSION['contador'] = 0;
         }
@@ -23,6 +25,10 @@ class AdivinaJugador {
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 10);
         }
+
+        $this->modalidad = "Adivina Jugador";
+
+        $nivel1 = 1;
 
         $this->estadisticas = "<h3>Número de partidas ganadas: " . $this->contador_jugador . " .<br> Intentos en esta partida: " . $this->intentos_jugador . " .</h3>";
 
@@ -37,16 +43,15 @@ class AdivinaJugador {
             } else {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
+                    $dbproc->insert($this->modalidad, $nivel1, $this->intentos_jugador);
+                    $dbproc->selectAll();
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
                     unset($this->intentos_jugador);
                     echo $this->estadisticas;
                     $this->contador_jugador ++;
                     $this->intentos_jugador ++;
-                    
-                    $dbproc = new DatabaseProc();
-//                    $dbproc->insert(NULL, "JUGADOR", 1, NULL, NULL);
-                    $dbproc->selectAll();
+
                     echo "<input type='submit' value='Jugar de nuevo'>";
                 } else if ($numero > $secretNumber) {
                     echo "<h3>El número ha de ser más pequeño que $numero" . "</h3>";
@@ -60,6 +65,7 @@ class AdivinaJugador {
     }
 
     public function pregunta_jugador2() {
+        $dbproc2 = new DatabaseProc();
         if (!isset($this->contador_jugador)) {
             $this->contador_jugador = $_SESSION['contador'] = 0;
         }
@@ -71,6 +77,10 @@ class AdivinaJugador {
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 50);
         }
+
+        $this->modalidad = "Adivina Jugador";
+
+        $nivel2 = 2;
 
         $this->estadisticas = "<h3>Número de partidas ganadas: " . $this->contador_jugador . " .<br> Intentos en esta partida: " . $this->intentos_jugador . " .</h3>";
 
@@ -85,6 +95,7 @@ class AdivinaJugador {
             } else {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
+                    $dbproc2->insert($this->modalidad, $nivel2, $this->intentos_jugador);
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
                     unset($this->intentos_jugador);
@@ -104,6 +115,7 @@ class AdivinaJugador {
     }
 
     public function pregunta_jugador3() {
+        $dbproc3 = new DatabaseProc();
         if (!isset($this->contador_jugador)) {
             $this->contador_jugador = $_SESSION['contador'] = 0;
         }
@@ -115,6 +127,10 @@ class AdivinaJugador {
         if (!isset($this->numeroSecreto)) {
             $this->numeroSecreto = $_SESSION["secretNumber"] = rand(1, 100);
         }
+
+        $this->modalidad = "Adivina Jugador";
+
+        $nivel3 = 3;
 
         $this->estadisticas = "<h3>Número de partidas ganadas: " . $this->contador_jugador . " .<br> Intentos en esta partida: " . $this->intentos_jugador . " .</h3>";
 
@@ -129,6 +145,7 @@ class AdivinaJugador {
             } else {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
+                    $dbproc3->insert($this->modalidad, $nivel3, $this->intentos_jugador);
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
                     unset($this->intentos_jugador);

@@ -10,9 +10,7 @@ class DatabaseProc {
         if (!$this->connection) {
             die("<h2>Connection failed: " . mysqli_connect_error() . "</h4>");
             $this->connection = null;
-        } else if ($this->connection) {
-            echo "<h2>Connection on database succesfully</h2>";
-        }
+        } 
     }
 
     public function insert($modalitat, $nivell, $intents): int {

@@ -10,8 +10,6 @@ class DatabaseOOP {
         if (!$this->connection) {
             die("<h2>Connection failed: " . mysqli_connect_error() . "</h2>");
             $this->connection = null;
-        } else if ($this->connection) {
-            echo "<h2>Connection on database succesfully</h2>";
         }
     }
 
