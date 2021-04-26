@@ -44,7 +44,7 @@ class AdivinaJugador {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
                     $dbproc->insert($this->modalidad, $nivel1, $this->intentos_jugador);
-                    $dbproc->selectAll();
+//                    $dbproc->selectAll();
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
                     unset($this->intentos_jugador);
