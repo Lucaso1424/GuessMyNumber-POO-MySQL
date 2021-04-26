@@ -95,13 +95,14 @@ class AdivinaJugador {
             } else {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
-                    $dbproc2->insert($this->modalidad, $nivel2, $this->intentos_jugador);
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
-                    unset($this->intentos_jugador);
                     echo $this->estadisticas;
                     $this->contador_jugador ++;
                     $this->intentos_jugador ++;
+                    $dbproc2->connect();
+                    $dbproc2->insert($this->modalidad, $nivel2, $this->intentos_jugador);
+                    unset($this->intentos_jugador);
                     echo "<input type='submit' value='Jugar de nuevo'>";
                 } else if ($numero > $secretNumber) {
                     echo "<h3>El número ha de ser más pequeño que $numero" . "</h3>";
@@ -145,13 +146,14 @@ class AdivinaJugador {
             } else {
                 if ($numero == $secretNumber) {
                     echo "<h3>Has adivinado el numero, el numero era: " . $secretNumber . "</h3>";
-                    $dbproc3->insert(1, $this->modalidad, $nivel3, $this->intentos_jugador);
                     // DESACEMOS LA SESIÓN SOLO DEL SECRET NUMBER PARA QUE SE GENERE UN NUEVO ALEATORIO 
                     unset($this->numeroSecreto);
-                    unset($this->intentos_jugador);
                     echo $this->estadisticas;
                     $this->contador_jugador ++;
                     $this->intentos_jugador ++;
+                    $dbproc3->connect();
+                    $dbproc3->insert($this->modalidad, $nivel3, $this->intentos_jugador);
+                    unset($this->intentos_jugador);
                     echo "<input type='submit' value='Jugar de nuevo'>";
                 } else if ($numero > $secretNumber) {
                     echo "<h3>El número ha de ser más pequeño que $numero" . "</h3>";
