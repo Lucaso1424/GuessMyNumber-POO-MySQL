@@ -13,6 +13,7 @@ class DatabaseOOP {
         }
     }
 
+    // PONEMOS : int PARA DEVOLVER UN INT
     public function insert($modalitat, $nivell, $intents): int {
         $sql = "INSERT INTO ESTADISTIQUES (MODALITAT, NIVELL, INTENTS) VALUES ('$modalitat', $nivell, $intents)";
         if ($this->connection != null) {

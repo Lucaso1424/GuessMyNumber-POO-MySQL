@@ -28,14 +28,14 @@ include_once 'clases/AdivinaMaquina.php';
             <br>
 
             <?php
-            $sesion = $_SESSION["sesion"];
+            $sesion = $_SESSION["sesion_maquina3"];
             if ($sesion == "") {
                 $sesion = new AdivinaMaquina();
             } else {
                 $sesion = unserialize($sesion);
             }
             $sesion->pregunta_maquina3();
-            $_SESSION["sesion"] = serialize($sesion);
+            $_SESSION["sesion_maquina3"] = serialize($sesion);
             ?>
         </form>
         <div class="footer">
