@@ -14,7 +14,7 @@ include_once 'clases/AdivinaMaquina.php';
     <body>
         <h1>Guess my number</h1>
         <h2>Nivell 1</h2>
-
+        
         <form method="post" action="index.php">
             <button type="submit" class="button button2">Vuelve al menú del juego</button>
         </form>
@@ -28,14 +28,14 @@ include_once 'clases/AdivinaMaquina.php';
             <br>
 
             <?php
-            $sesion = $_SESSION["sesion"];
+            $sesion = $_SESSION["sesion_maquina1"];
             if ($sesion == "") {
                 $sesion = new AdivinaMaquina();
             } else {
                 $sesion = unserialize($sesion);
             }
             $sesion->pregunta_maquina1();
-            $_SESSION["sesion"] = serialize($sesion);
+            $_SESSION["sesion_maquina1"] = serialize($sesion);
             ?>
         </form>
         <div class="footer">
