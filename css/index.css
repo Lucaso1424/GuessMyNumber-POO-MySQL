@@ -41,13 +41,13 @@ h4 {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    padding: 120px 0;
+    background-color: #111;
     width: 100%;
-    background-color: #33a2ff;
-    color: black;
-    text-align: center;
+    display: block;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
 }
 
 #logo {
@@ -81,7 +81,7 @@ h4 {
     color: white;
 }
 
-table, tr th, td {
+table, td {
     font-family: Arial;
     border: 2px solid black;
     border-color: black;
@@ -89,9 +89,38 @@ table, tr th, td {
     border-collapse: collapse;
 }
 
+th {
+    width: 80%;
+    height: 80px;
+    border: 2px solid black;
+    border-color: black;
+}
+
+td {
+    width: 80%;
+    height: 80px;
+    border: 2px solid black;
+    border-color: black;
+}
+
+tr {
+    width: 0%;
+    border: 2px solid black;
+    border-color: black;
+}
+
 /*TABLA DISPLAY FLEX Y CENTER*/
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.sheet {
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
