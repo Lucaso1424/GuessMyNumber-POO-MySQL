@@ -21,7 +21,7 @@ include_once 'clases/database/DatabaseProc.php';
         ?>
 
         <form method="get" action="tabla_estadisticas.php">
-            <button type="submit" class="button button2">Tabla estadísticas</button>
+            <button type="submit" class="button button2">Puntuación</button>
         </form>
 
         <p><strong>Modalidad pregunta el jugador</strong></p>

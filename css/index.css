@@ -41,13 +41,13 @@ h4 {
 }
 
 .footer {
-    padding: 120px 0;
-    background-color: #111;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    display: block;
-    margin: 0;
-    outline: 0;
-    box-sizing: border-box;
+    background-color: #33a2ff;
+    color: black;
+    text-align: center;
 }
 
 #logo {
@@ -81,26 +81,26 @@ h4 {
     color: white;
 }
 
-table, td {
-    font-family: Arial;
+table,
+th,
+td {
     border: 2px solid black;
-    border-color: black;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
 }
 
-th {
-    width: 80%;
-    height: 80px;
-    border: 2px solid black;
-    border-color: black;
+td {
+    height: 50px;
+    vertical-align: center;
 }
 
+th,
 td {
-    width: 80%;
-    height: 80px;
-    border: 2px solid black;
-    border-color: black;
+    padding: 15px;
+    text-align: center;
 }
 
 tr {
@@ -114,13 +114,4 @@ tr {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.sheet {
-    border: 0;
-    font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
