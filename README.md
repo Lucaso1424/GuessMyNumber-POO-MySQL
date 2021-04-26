@@ -1,4 +1,4 @@
-GuessMyNumber → MySQL
+# GuessMyNumber → MySQL
 
 Juego para niños programado en PHP y MySQL en backend, y HTML y CSS como front-end con 
 inserciones, tablas, consultas y creación y gestión de bases de datos en MySQL. 
