@@ -16,10 +16,6 @@ include_once 'clases/AdivinaJugador.php';
     <body>
         <h1>Guess my number</h1>
         <h2>Nivell 1</h2>
-        <?php
-        $dbproc = new DatabaseProc();
-        $dbproc->connect();
-        ?>
         <form method="post" action="index.php">
             <button type="submit" class="button button2">Vuelve al menú del juego</button>
         </form>
