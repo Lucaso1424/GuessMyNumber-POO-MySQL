@@ -76,3 +76,19 @@ h4 {
     background-color: #008CBA;
     color: white;
 }
+
+table, tr th, td {
+    font-family: Arial;
+    border: 2px solid black;
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/*TABLA DISPLAY FLEX Y CENTER*/
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

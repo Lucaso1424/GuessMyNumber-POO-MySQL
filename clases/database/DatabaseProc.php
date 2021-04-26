@@ -1,5 +1,7 @@
 <?php
+
 class DatabaseProc {
+
     private $servername = "localhost";
     private $username = "root";
     private $password = "79957995lucas";
@@ -10,7 +12,7 @@ class DatabaseProc {
         if (!$this->connection) {
             die("<h2>Connection failed: " . mysqli_connect_error() . "</h4>");
             $this->connection = null;
-        } 
+        }
     }
 
     public function insert($modalitat, $nivell, $intents): int {
@@ -24,8 +26,32 @@ class DatabaseProc {
         }
     }
 
+    public function imprimirTabla() {
+        $dbproc = new DatabaseProc();
+        $dbproc->connect();
+        $result = $dbproc->selectAll();
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            $output = "<table>";
+            $output .= "<tr><th>ID</th><th>MODALITAT</th><th>NIVELL</th><th>DATA</th><th>INTENTS</tr>";
+            while ($row = $result->fetch_assoc()) {
+                $output .= "<tr><td>" . $row["ID"] . "</td><td>" . $row["MODALITAT"] . "</td>"
+                        . "<td>" . $row["NIVELL"] . "</td>" . "<td>" . $row["DATA_USUARI"] . "</td>" .
+                        "<td>" . $row["INTENTS"] . "</td></tr>";
+                // GUARDAMOS EN OUTPUT CERRANDO LA ETIQUETA TODAS LAS ROWS
+            } $output .= "</table>";
+        } else {
+            echo "<p>No hay inserciones en la base de datos, ¡ni tampoco has jugado partidas! :(</p>";
+        }
+        // PRINTAMOS LA VARIABLE OUTPUT
+        echo "<div class='center'>";
+        echo $output;
+        echo "</div>";
+    }
+
     public function selectAll() {
-        $sql = "SELECT ID, MODALITAT, NIVELL, DATA_PARTIDA, INTENTS FROM ESTADISTIQUES";
+        $sql = "SELECT MODALITAT, NIVELL, INTENTS, ID, DATA_USUARI FROM ESTADISTIQUES";
         $result = null;
         if ($this->connection != null) {
             $result = mysqli_query($this->connection, $sql);
@@ -34,7 +60,7 @@ class DatabaseProc {
     }
 
     public function selectByModalitat($modalitat) {
-        $sql = "SELECT ID, MODALITAT, NIVELL, DATA_PARTIDA, INTENTS FROM ESTADISTIQUES WHERE MODALITAT = '$modalitat'";
+        $sql = "SELECT MODALITAT, NIVELL, INTENTS, ID, DATA_USUARI FROM ESTADISTIQUES WHERE MODALITAT = '$modalitat'";
         $result = null;
         if ($this->connection != null) {
             $result = mysqli_query($this->connection, $sql);
