@@ -15,9 +15,12 @@ error_reporting(0);
     <body>
         <h1>Guess my number</h1>
         <h2>Tabla estadísticas</h2>
+        <h2>Puntuación</h2>
 
         <form method="get" action="index.php">
-            <button type="submit">Inicio</button>
+            <div id="center_button">
+                <button type="submit" class="button button2">Inicio</button>
+            </div>
         </form>
 
         <?php

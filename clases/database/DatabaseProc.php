@@ -42,7 +42,8 @@ class DatabaseProc {
                 // GUARDAMOS EN OUTPUT CERRANDO LA ETIQUETA TODAS LAS ROWS
             } $output .= "</table>";
         } else {
-            echo "<p>No hay inserciones en la base de datos, ¡ni tampoco has jugado partidas! :(</p>";
+            echo "<p>No hay inserciones en la base de datos.</p>";
+            echo "<p>No has jugado partidas! :(</p>";
         }
         // PRINTAMOS LA VARIABLE OUTPUT
         echo "<div class='center'>";
