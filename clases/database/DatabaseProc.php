@@ -6,6 +6,7 @@ class DatabaseProc {
     private $username = "root";
     private $password = "79957995lucas";
     private $dbname = "M07_UF3";
+    private $connection;
 
     public function connect(): void {
         $this->connection = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
