@@ -27,16 +27,15 @@ class DatabaseProc {
         }
     }
 
-    public function imprimirTabla() {
+    public function imprimirTabla($param) {
         $dbproc = new DatabaseProc();
         $dbproc->connect();
-        $result = $dbproc->selectAll();
 
-        if ($result->num_rows > 0) {
+        if ($param->num_rows > 0) {
             // output data of each row
             $output = "<table>";
             $output .= "<tr><th>ID</th><th>MODALIDAD</th><th>NIVEL</th><th>FECHA Y HORA</th><th>INTENTOS</tr>";
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $param->fetch_assoc()) {
                 $output .= "<tr><td>" . $row["ID"] . "</td><td>" . $row["MODALITAT"] . "</td>"
                         . "<td>" . $row["NIVELL"] . "</td>" . "<td>" . $row["DATA_USUARI"] . "</td>" .
                         "<td>" . $row["INTENTS"] . "</td></tr>";
@@ -47,9 +46,7 @@ class DatabaseProc {
             echo "<p>No has jugado partidas! :(</p>";
         }
         // PRINTAMOS LA VARIABLE OUTPUT
-        echo "<div class='center'>";
         echo $output;
-        echo "</div>";
     }
 
     public function selectAll() {

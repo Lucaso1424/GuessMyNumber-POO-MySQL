@@ -21,11 +21,48 @@ error_reporting(0);
             <button type="submit" class="button button2">Inicio</button>
         </div>
     </form>
-    <?php
+
+    <script>
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 3 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "llamada_ajax.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
+
+    <form method="get" class="custom-select">
+        <select name="Modalidad" onchange="showUser(this.value)">
+            <option value="">Selecciona una modalidad:</option>
+            <option name="1" value="1">Modalidad Jugador</option>
+            <option name="2" value="2">Modalidad Máquina</option>
+            <option name="3" value="3">Todas</option>
+        </select>
+    </form>
+
+<?php
         $dbproc = new DatabaseProc();
-        $dbproc->imprimirTabla();
+        
+        $q = intval($_GET['q']);
+        if (($q == "1")) {
+           $dbproc->imprimirTabla("Adivina Jugador");
+        } else if (($q == "2")) {
+           $dbproc->imprimirTabla("Adivina Maquina");
+        }
         ?>
+    
+    <div class='center' id='txtHint'>
+    </div>
     <br>
+    
     <div class="footer">
         <p id="p_footer">Lucas Padilla Hidalgo™</p>
         <p id="p_footer">Todos los derechos reservados. 2021.</p>
