@@ -115,3 +115,9 @@ tr {
     align-items: center;
     justify-content: center;
 }
+
+select {
+    border-color: black;
+    width: 200px;
+    height: 30px;
+}
