@@ -22,21 +22,27 @@ error_reporting(0);
         </div>
     </form>
 
+    <form method="get" action="crud.php">
+        <div id="center_button">
+            <button type="submit" class="button button2">Añadir entrada</button>
+        </div>
+    </form>
+
     <script>
-        function showUser(str) {
-            if (str == "") {
-                document.getElementById("txtHint").innerHTML = "";
-                return;
-            }
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 3 && this.status == 200) {
-                    document.getElementById("txtHint").innerHTML = this.responseText;
-                }
-            }
-            xmlhttp.open("GET", "llamada_ajax.php?q=" + str, true);
-            xmlhttp.send();
+    function showUser(str) {
+        if (str == "") {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
         }
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 3 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET", "llamada_ajax.php?q=" + str, true);
+        xmlhttp.send();
+    }
     </script>
 
     <form method="get" class="custom-select">
@@ -48,7 +54,7 @@ error_reporting(0);
         </select>
     </form>
 
-<?php
+    <?php
         $dbproc = new DatabaseProc();
         
         $q = intval($_GET['q']);
@@ -58,11 +64,11 @@ error_reporting(0);
            $dbproc->imprimirTabla("Adivina Maquina");
         }
         ?>
-    
+
     <div class='center' id='txtHint'>
     </div>
     <br>
-    
+
     <div class="footer">
         <p id="p_footer">Lucas Padilla Hidalgo™</p>
         <p id="p_footer">Todos los derechos reservados. 2021.</p>

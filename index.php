@@ -2,6 +2,7 @@
 session_start();
 // INCLUIR SIEMPRE LOS ARCHIVOS DE DATABASE
 include_once 'clases/database/DatabaseProc.php';
+error_reporting(0);
 ?>
 
 <html>

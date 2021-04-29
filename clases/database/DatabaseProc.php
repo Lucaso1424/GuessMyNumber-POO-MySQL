@@ -48,7 +48,7 @@ class DatabaseProc {
         // PRINTAMOS LA VARIABLE OUTPUT
         echo $output;
     }
-
+    
     public function selectAll() {
         $sql = "SELECT MODALITAT, NIVELL, INTENTS, ID, DATA_USUARI FROM ESTADISTIQUES";
         $result = null;
@@ -66,5 +66,7 @@ class DatabaseProc {
         }
         return $result;
     }
+
+    
 
 }

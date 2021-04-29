@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'clases/AdivinaMaquina.php';
+error_reporting(0);
 ?>
 
 <html>
